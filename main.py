@@ -133,55 +133,55 @@ def make_vodex_api_call(payload):
     response.raise_for_status()
     return response.json()
 
-@app.route('/api/vodexcall', methods=['POST'])
-def make_callvodex():
-    try:
-        data = request.get_json()
+# @app.route('/api/vodexcall', methods=['POST'])
+# def make_callvodex():
+#     try:
+#         data = request.get_json()
 
-        # Extract data from the request
-        name = data.get('firstName')
-        phone_number = data.get('phone')
-        job_title = data.get('job_title')
-        job_location = data.get('job_location')
-        hourly_rate = data.get('hourly_rate')
-        job_type = data.get('job_type')
-        remote = data.get('remote')
-        required_skills = data.get('required_skills')
-        recruiter_name = data.get('recruiter_name')
-        recruiter_phone = data.get('recruiter_phone')
-        recruiter_email = data.get('recruiter_email')
-        print(name)
-        print(recruiter_name)
+#         # Extract data from the request
+#         name = data.get('firstName')
+#         phone_number = data.get('phone')
+#         job_title = data.get('job_title')
+#         job_location = data.get('job_location')
+#         hourly_rate = data.get('hourly_rate')
+#         job_type = data.get('job_type')
+#         remote = data.get('remote')
+#         required_skills = data.get('required_skills')
+#         recruiter_name = data.get('recruiter_name')
+#         recruiter_phone = data.get('recruiter_phone')
+#         recruiter_email = data.get('recruiter_email')
+#         print(name)
+#         print(recruiter_name)
 
-        project_id = "65c63e93f31b37f4b76aa9f7"
+#         project_id = "65c63e93f31b37f4b76aa9f7"
 
-        payload = {
-            "callList": [
-                {
-                    "firstName": "{}".format(name),
-                    "lastName": "Sai",
-                    "phone": "{}".format(phone_number),
-                    "job_title": "{}".format(job_title),
-                    "job_location": "{}".format(job_location),
-                    "hourly_rate": "{}".format(hourly_rate),
-                    "job_type": "{}".format(job_type),
-                    "remote": "{}".format(remote),
-                    "required_skills": "{}".format(required_skills),
-                    "recruiter_name": "{}".format(recruiter_name),
-                    "recruiter_phone": "{}".format(recruiter_phone),
-                    "recruiter_email": "{}".format(recruiter_email),
-                    }
-                ]
-        ,
-            "projectId": "{}".format(project_id),
-        }
+#         payload = {
+#             "callList": [
+#                 {
+#                     "firstName": "{}".format(name),
+#                     "lastName": "Sai",
+#                     "phone": "{}".format(phone_number),
+#                     "job_title": "{}".format(job_title),
+#                     "job_location": "{}".format(job_location),
+#                     "hourly_rate": "{}".format(hourly_rate),
+#                     "job_type": "{}".format(job_type),
+#                     "remote": "{}".format(remote),
+#                     "required_skills": "{}".format(required_skills),
+#                     "recruiter_name": "{}".format(recruiter_name),
+#                     "recruiter_phone": "{}".format(recruiter_phone),
+#                     "recruiter_email": "{}".format(recruiter_email),
+#                     }
+#                 ]
+#         ,
+#             "projectId": "{}".format(project_id),
+#         }
 
-        response_data = make_vodex_api_call(payload)
-        return jsonify({'status': 'success', 'response': response_data})
+#         response_data = make_vodex_api_call(payload)
+#         return jsonify({'status': 'success', 'response': response_data})
 
-    except Exception as e:
-        error_response = {'status': 'error', 'response': str(e)}
-        return jsonify(error_response)
+#     except Exception as e:
+#         error_response = {'status': 'error', 'response': str(e)}
+#         return jsonify(error_response)
 
 
 
