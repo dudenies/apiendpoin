@@ -329,10 +329,10 @@ def write_json_data():
                 print(f"Name: {name}, Phone: {phone}")
                 # time.sleep(2)
                 make_synthflow_call(name,phone,custom_variables)
-            # make_test_call(name,phone,custom_variables)
-            # Write the JSON data to a file named 'campaign_data.json'
-            with open('campaign_data.json', 'w') as file:
-                json.dump(data, file)
+            # # make_test_call(name,phone,custom_variables)
+            # # Write the JSON data to a file named 'campaign_data.json'
+            # with open('campaign_data.json', 'w') as file:
+            #     json.dump(data, file)
             
 
             return jsonify({'status': 'success', 'response': 'Making Calls using Synthflow'})
@@ -348,10 +348,10 @@ def write_json_data():
                 print(f"Name: {name}, Phone: {phone}")
                 # time.sleep(2)
                 response_data = make_vodex_api_call(data,name,phone)
-            # make_test_call(name,phone,custom_variables)
-            # Write the JSON data to a file named 'campaign_data.json'
-            with open('campaign_data.json', 'w') as file:
-                json.dump(data, file)
+            # # make_test_call(name,phone,custom_variables)
+            # # Write the JSON data to a file named 'campaign_data.json'
+            # with open('campaign_data.json', 'w') as file:
+            #     json.dump(data, file)
             
             return jsonify({'status': 'success', 'response': 'Making Calls using Vodex'})
 
