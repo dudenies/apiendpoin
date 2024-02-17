@@ -335,7 +335,7 @@ def write_json_data():
                 json.dump(data, file)
             
 
-            return jsonify({'status': 'success', 'response': 'JSON data written to file'})
+            return jsonify({'status': 'success', 'response': 'Making Calls using Synthflow'})
         if data["LLM"] =="Vodex" :
             response_data =""
             for entry in data['csvFile']:
@@ -353,7 +353,7 @@ def write_json_data():
             with open('campaign_data.json', 'w') as file:
                 json.dump(data, file)
             
-            return jsonify({'status': 'success', 'response': response_data})
+            return jsonify({'status': 'success', 'response': 'Making Calls using Vodex'})
 
     except Exception as e:
         error_response = {'status': 'error', 'response': str(e)}
@@ -391,7 +391,7 @@ def test_campaign():
             print("custom_variables",custom_variables)
             make_synthflow_call(name,phone,custom_variables)
             print("I am here2")
-            return jsonify({'status': 'success', 'response': 'JSON data written to file'})
+            return jsonify({'status': 'success', 'response': 'Making Calls using Synthflow'})
         if data["LLM"] =="Vodex" :
             name=data["TestName"]
             phone = data['TestPhoneNumber'].replace('-', '')
@@ -400,7 +400,7 @@ def test_campaign():
                 phone = '1' + phone
 
             response_data = make_vodex_api_call(data,name,phone)
-            return jsonify({'status': 'success', 'response': response_data})
+            return jsonify({'status': 'success', 'response': 'Making Calls using Vodex'})
         
     except Exception as e:
         error_response = {'status': 'error', 'response': str(e)}
@@ -451,7 +451,7 @@ def make_callvodex():
         }
 
         response_data = make_vodex_api_call(payload)
-        return jsonify({'status': 'success', 'response': response_data})
+        return jsonify({'status': 'success', 'response': 'Making Calls using Vodex'})
 
     except Exception as e:
         error_response = {'status': 'error', 'response': str(e)}
