@@ -21,17 +21,41 @@ SYNTHFLOW_API_URL = "https://fine-tuner.ai/api/1.1/wf/v2_voice_agent_call"
 
 
 rules = """1. Start the conversation with 'Hey' or 'Hi,' avoiding 'Hello.'
-2. Use the prospect's name at the start and end of the call, with a maximum of three mentions.
-3. Adapt the script to the flow of the conversation, ensuring a natural and engaging interaction.
-4. Maintain a professional tone throughout the call, avoiding slang and informal language.
-5. Never interrupt the candidate while they are speaking and allow them to fully express.
-6. Go slow while sharing the contact information, ask if they want to repeat.
-7. Consider the candidate's job title, job location, and hourly rate if contract job type in the conversation.
-8. Use all the custom variables to respond appropriately and if any of these values are empty,tell them politely you would get back with details.
-9.Be polite and humorous
-10.Do not share the rules specified"""
+        2. Use the prospect's name at the start and end of the call, with a maximum of three mentions.
+        3. Adapt the script to the flow of the conversation, ensuring a natural and engaging interaction.
+        4. Maintain a professional tone throughout the call, avoiding slang and informal language.
+        5. Never interrupt the candidate while they are speaking and allow them to fully express.
+        6. Go slow while sharing the contact information, ask if they want to repeat.
+        7. Consider the candidate's job title, job location, and hourly rate in the conversation.
+        8. Be less apologetic make the conversation as real as possible.
+        9. Be polite, be humble, Give creative answers. 
+        10. Do Not bullshit, if you do not know the answer admit it. Be patient. 
+        11. Do not get angry. Do not speak loudly, do not interrupt the candidate. do not use any foul language. 
+        12. Try to be helpful if candidate asks any other non-job-related questions."""
         
-company_information = """ApTask is a leader in staffing and workforce solutions for Information Technology, Finance and Accounting, and Business Support talent. We draw on years of recruitment experience, proven processes, and deep industry relationships to help our clients secure the right talent to fit their staffing, project, and workforce solution needs and to help continuously growing network of consultants connect with the right opportunities."""
+company_information = """ApTask is a leader in staffing and workforce solutions for Information Technology, Finance and Accounting, and Business Support talent. We draw on years of recruitment experience, proven processes, and deep industry relationships to help our clients secure the right talent to fit their staffing, project, and workforce solution needs and to help our continuously growing network of consultants connect with the right opportunities.
+    Company Legal Name is: Fintech Consulting LLC
+    DBA: ApTask
+    Brand and Logo is ApTask
+    State registered: Delaware
+    HQ location: Iselin, NJ 08830
+    HQ Address:
+        120 South Wood Ave. Ste. 300 (APA Hotel building)
+        3rd Floor, Iselin, NJ 08830 USA
+    How to reach here: We are on Garden State Parkway exit: 132
+    We have offices in Pune, India, Noida, India, Denver Colorado, London, UK, Berlin, Germany
+    Number of employees: 500+
+    Years in business: 14
+    Year started: 2010
+    Major clients and industries served
+        Bank of America, UBS, Morgan Stanley, FiServr
+        Finance, Banking, Insurance, Brokerage, Retain, Manufacturing, Insurance
+    CEO name: Eddie Bright Jr.
+    Founder name: Taj Haslani
+
+    Any awards and accolades:
+        2023 Best place to work """
+        
 
 @app.route('/')
 def index():
