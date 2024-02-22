@@ -490,9 +490,9 @@ def search_job():
  
     # You might need to define these variables based on your environment
     api_url = "https://api.jobdiva.com"
-    client_id = int(os.getenv("client_id"))
-    username = os.getenv("jobdiva_username")
-    password = os.getenv("password")
+    client_id = int(os.environ.get('client_id'))
+    username = os.environ.get('jobdiva_username')
+    password = os.environ.get('password')
     max_returned = 1  # Example max returned results
  
     search_results = quick_job_search(api_url, client_id, username, password, search_value, max_returned)

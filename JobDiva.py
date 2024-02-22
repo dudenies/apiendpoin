@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 load_dotenv()
-API_KEY = os.getenv("OPENAI_KEY")
+API_KEY = os.environ.get('OPENAI_KEY')
 def extract_job_description_with_openai(job_description):
     client = OpenAI(api_key=API_KEY)
  
