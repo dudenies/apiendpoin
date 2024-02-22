@@ -7,6 +7,7 @@ import json
 import time
 from dotenv import load_dotenv 
 from flask import Flask, jsonify, request
+from JobDiva import quick_job_search
 from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 cors = CORS(app)
@@ -481,7 +482,21 @@ def make_callvodex():
         error_response = {'status': 'error', 'response': str(e)}
         return jsonify(error_response)
 
-
+@app.route('/search', methods=['GET'])
+def search_job():
+    search_value = request.args.get('search_value')
+    if not search_value:
+        return jsonify({'error': 'Search value not provided'}), 400
+ 
+    # You might need to define these variables based on your environment
+    api_url = "https://api.jobdiva.com"
+    client_id = int(os.getenv("client_id"))
+    username = os.getenv("jobdiva_username")
+    password = os.getenv("password")
+    max_returned = 1  # Example max returned results
+ 
+    search_results = quick_job_search(api_url, client_id, username, password, search_value, max_returned)
+    return jsonify(search_results)
 
 #Vocode
 #     import vocode
